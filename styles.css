@@ -1,0 +1,332 @@
+/*
+================================================================================
+styles.css — The stylesheet
+================================================================================
+
+All five pages link to this one file. Right now it does the least CSS
+needed to make the required techniques (Flexbox, Grid, a table, a form,
+link states, a media query) visible and working. The colours, fonts,
+spacing and personality are yours to add, after planning.md.
+
+Table of contents:
+1. CSS variables
+2. Reset and base styles
+3. Accessibility: the skip link
+4. Header and navigation (Flexbox)
+5. Cards (Flexbox)
+6. Gallery (Grid)
+7. Table
+8. Form
+9. Footer
+10. Responsive styles (media query)
+================================================================================
+*/
+
+
+/*
+================================================================================
+1. CSS VARIABLES
+================================================================================
+
+Your planning.md asks for a colour scheme before you write any CSS. Once
+you have one, put it here instead of these placeholders, and the rest of
+the file picks it up automatically through var().
+*/
+
+:root {
+    --primary-color: #333333;
+    --accent-color: #0066cc;
+    --background-color: #ffffff;
+    --text-color: #222222;
+    --border-color: #dddddd;
+
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+
+    --radius: 6px;
+}
+
+
+/*
+================================================================================
+2. RESET AND BASE STYLES
+================================================================================
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/*
+================================================================================
+3. ACCESSIBILITY: THE SKIP LINK
+================================================================================
+
+Hidden until it has keyboard focus, so a keyboard user's first Tab press
+can jump straight past the navigation to the main content.
+*/
+
+.skip-link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.skip-link:focus {
+    width: auto;
+    height: auto;
+    clip: auto;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: var(--background-color);
+    outline: 2px solid var(--accent-color);
+    z-index: 1000;
+}
+
+
+/*
+================================================================================
+4. HEADER AND NAVIGATION
+================================================================================
+
+The brief requires Flexbox somewhere; the header is a common place for it,
+lining the logo up on one side and the navigation on the other.
+*/
+
+header {
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--spacing-sm) 0;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: var(--spacing-md);
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+/*
+Link pseudo-classes, in this order, so a later state does not override an
+earlier one: link, visited, hover, focus, active.
+*/
+.main-nav a:link,
+.main-nav a:visited {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.main-nav a:active {
+    color: var(--primary-color);
+}
+
+.main-nav a[aria-current="page"] {
+    font-weight: bold;
+}
+
+
+/*
+================================================================================
+5. CARDS
+================================================================================
+
+A row of cards is another common home for the required Flexbox: a
+container with display: flex, wrapping to a new row once it runs out of
+width.
+*/
+
+.section {
+    padding: var(--spacing-lg) 0;
+}
+
+.card-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.card {
+    flex: 1 1 200px;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+}
+
+
+/*
+================================================================================
+6. GALLERY
+================================================================================
+
+The brief's required CSS Grid: a container with display: grid, its
+columns sized automatically to fit however many images there are.
+*/
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.gallery figure {
+    margin: 0;
+}
+
+.gallery img {
+    display: block;
+    width: 100%;
+    border-radius: var(--radius);
+}
+
+.gallery figcaption {
+    margin-top: var(--spacing-xs);
+    font-size: 0.9rem;
+    color: var(--primary-color);
+}
+
+
+/*
+================================================================================
+7. TABLE
+================================================================================
+*/
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--spacing-sm);
+}
+
+caption {
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: var(--spacing-xs);
+}
+
+th, td {
+    text-align: left;
+    padding: var(--spacing-xs);
+    border-bottom: 1px solid var(--border-color);
+}
+
+
+/*
+================================================================================
+8. FORM
+================================================================================
+*/
+
+.form-row {
+    margin-bottom: var(--spacing-sm);
+}
+
+label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: var(--spacing-xs);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    font: inherit;
+}
+
+button {
+    padding: var(--spacing-xs) var(--spacing-md);
+    border: none;
+    border-radius: var(--radius);
+    background-color: var(--accent-color);
+    color: #ffffff;
+    font: inherit;
+    cursor: pointer;
+}
+
+
+/*
+================================================================================
+9. FOOTER
+================================================================================
+*/
+
+footer {
+    border-top: 1px solid var(--border-color);
+    padding: var(--spacing-sm) 0;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+
+/*
+================================================================================
+10. RESPONSIVE STYLES
+================================================================================
+
+The brief's required media query. This one stacks the navigation on a
+narrow screen instead of leaving it to wrap mid-list; add more rules here
+as your own design needs them.
+*/
+
+@media (max-width: 480px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+}
