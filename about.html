@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--
+================================================================================
+about.html — About / overview
+================================================================================
+
+A page for background: who or what this site is about, in more depth than
+the home page has room for. It carries the required table and both list
+types, since a page about something usually needs to list things and
+compare things.
+================================================================================
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Replace this with a one-line description of this page.">
+    <title>Site Title — About</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo">Site Title</a>
+            <nav class="main-nav" aria-label="Main">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" aria-current="page">About</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="section">
+            <div class="container">
+                <h1>About</h1>
+                <p>An opening paragraph: what this page covers and why a
+                visitor would want to read it.</p>
+
+                <h2>Background</h2>
+                <p>A paragraph or two of the longer explanation the home
+                page did not have room for.</p>
+
+                <h2>Steps, in order</h2>
+                <!--
+                An ordered list, because the sequence matters here. If your
+                own content has no natural order, this list can move to a
+                different page; the brief just asks for one somewhere.
+                -->
+                <ol>
+                    <li>First step.</li>
+                    <li>Second step.</li>
+                    <li>Third step.</li>
+                </ol>
+
+                <h2>Related items</h2>
+                <!--
+                An unordered list, because order does not matter here.
+                -->
+                <ul>
+                    <li>First item.</li>
+                    <li>Second item.</li>
+                    <li>Third item.</li>
+                </ul>
+
+                <h2>At a glance</h2>
+                <!--
+                The brief's required data table. A caption names it for
+                sighted and screen-reader users alike; <th scope="col">
+                ties each header to its column.
+                -->
+                <table>
+                    <caption>Quick facts</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Detail</th>
+                            <th scope="col">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>First detail</td>
+                            <td>Its value</td>
+                        </tr>
+                        <tr>
+                            <td>Second detail</td>
+                            <td>Its value</td>
+                        </tr>
+                        <tr>
+                            <td>Third detail</td>
+                            <td>Its value</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Site Title. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+================================================================================
+contact.html — Contact
+================================================================================
+
+The brief's required form. This one does not send anywhere: there is no
+server behind a page like this, so submitting it does nothing yet. That is
+fine for the assignment, which asks for a working form's markup, not a
+working mail server behind it.
+================================================================================
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Replace this with a one-line description of this page.">
+    <title>Site Title — Contact</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo">Site Title</a>
+            <nav class="main-nav" aria-label="Main">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html" aria-current="page">Contact</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="section">
+            <div class="container">
+                <h1>Contact</h1>
+                <p>A sentence inviting a visitor to get in touch &mdash; the
+                em dash there is another kind of HTML character entity,
+                alongside &copy; in the footer.</p>
+
+                <!--
+                Every field has a <label>, joined to its input by matching
+                for/id, so a screen reader announces the field's name when
+                it gets focus, not just "edit text".
+                -->
+                <form>
+                    <div class="form-row">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Site Title. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

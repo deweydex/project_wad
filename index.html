@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--
+================================================================================
+index.html — Home
+================================================================================
+
+This is a skeleton, not a finished site. Every page here has the HTML
+structure the brief asks for, with placeholder content marking where your
+own goes. There is almost no design in styles.css on purpose: the brief
+marks your planning and your own design choices, so this starter makes
+none of those choices for you.
+
+Before changing anything, open planning.md and work through it. Come back
+here once you know your topic, your pages, and your colours.
+================================================================================
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Replace this with a one-line description of your site.">
+    <title>Site Title — Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo">Site Title</a>
+
+            <!--
+            One <nav>, copied onto every page with the same links in the
+            same order. That repetition is what makes it "consistent
+            navigation" rather than five different menus.
+            -->
+            <nav class="main-nav" aria-label="Main">
+                <ul>
+                    <li><a href="index.html" aria-current="page">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero">
+            <div class="container">
+                <h1>Site Title</h1>
+                <p>One or two sentences saying what this site is about and
+                who it is for. Replace this once your planning is done.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2>What you will find here</h2>
+                <!--
+                A short unordered list works well as a landing-page menu of
+                what the rest of the site covers. Point each item's text at
+                one of your other four pages.
+                -->
+                <ul>
+                    <li>A line about the about page.</li>
+                    <li>A line about the gallery page.</li>
+                    <li>A line about the contact page.</li>
+                    <li>A line about the resources page.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2>Three things about this site</h2>
+                <!--
+                Three short cards in a row is a common use of Flexbox
+                (the brief names "cards" as one place it is required).
+                .card-row is the Flexbox container; see styles.css.
+                -->
+                <div class="card-row">
+                    <div class="card">
+                        <h3>First point</h3>
+                        <p>A sentence or two.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Second point</h3>
+                        <p>A sentence or two.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Third point</h3>
+                        <p>A sentence or two.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Site Title. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
