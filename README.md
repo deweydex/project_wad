@@ -50,8 +50,8 @@ materials.
 
 This is the second starter in the web authoring and databases course.
 The course front page is at
-[deweydex.github.io/dewstack](https://deweydex.github.io/dewstack/), and
-its Arc 2 pages (planning a site, several pages and one navigation, a
-Flexbox row, a Grid gallery, a phone-friendly navigation, a form, images
-and file size, documenting what you built) walk through the ideas this
-starter uses, one at a time.
+[deweydex.github.io/dewlab](https://deweydex.github.io/dewlab/), and its
+"A site with several pages" series (planning a site, several pages and
+one navigation, a Flexbox row, a Grid gallery, a phone-friendly
+navigation, a form, images and file size, documenting what you built)
+walks through the ideas this starter uses, one at a time.
